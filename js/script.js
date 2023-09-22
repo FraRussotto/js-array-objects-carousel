@@ -41,11 +41,17 @@ const btnDown = document.querySelector('.down');
 let counterImg = 0;
 
 //3.
-archive.forEach((game) =>{
-    imageWrapper.innerHTML += `<div class="full hide">
-    <img src="${game.image}"></div>`
+archive.forEach((element) =>{
+    imageWrapper.innerHTML += `
+    <div class="full hide">
+      <img src="${element.image}">
+      <div class="description">
+        <h2>${element.title}</h2>
+        <p>${element.text}</p>
+      </div>
+    </div>`
   miniWrapper.innerHTML += `<div class="thumbnail">
-  <img src="${game.image}"></div>`
+  <img src="${element.image}"></div>`
 })
 
 const fullCollection = document.getElementsByClassName('full');

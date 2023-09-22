@@ -94,3 +94,25 @@
   opacity: 0.5;
   border: 10px solid white;
 }
+
+/* Esercizio js-array-objects-carousel */
+
+.full{
+  position: relative;
+}
+
+.full .description{
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+  color: white;
+  text-align: end;
+}
+
+.description h2{
+  font-weight: bold;
+}
+
+.description p{
+  font-size: 1.5rem;
+}
