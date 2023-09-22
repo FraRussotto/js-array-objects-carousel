@@ -57,32 +57,48 @@ archive.forEach((element) =>{
 const fullCollection = document.getElementsByClassName('full');
 fullCollection[counterImg].classList.remove('hide')
 
-
 const thumbnailCollection = document.getElementsByClassName('thumbnail');
 thumbnailCollection[counterImg].classList.add('active');
 
 
-btnDown.addEventListener('click', function(){
+// btnDown.addEventListener('click', function(){
 
+//   fullCollection[counterImg].classList.add('hide')
+//   thumbnailCollection[counterImg].classList.remove('active');
+
+//   counterImg++;
+
+//   if(counterImg === archive.length) counterImg = 0;
+//     fullCollection[counterImg].classList.remove('hide')
+//     thumbnailCollection[counterImg].classList.add('active');
+// });
+
+// btnUp.addEventListener('click', function(){
+
+//   fullCollection[counterImg].classList.add('hide')
+//   thumbnailCollection[counterImg].classList.remove('active');
+
+//   counterImg--;
+
+//   if(counterImg < 0) counterImg = archive.length - 1;
+//     fullCollection[counterImg].classList.remove('hide')
+//     thumbnailCollection[counterImg].classList.add('active');
+//   });
+
+// Bonus 1:
+
+let c = 0;
+
+const clock = setInterval(function(){
+  c++;
   fullCollection[counterImg].classList.add('hide')
   thumbnailCollection[counterImg].classList.remove('active');
 
   counterImg++;
 
   if(counterImg === archive.length) counterImg = 0;
-    fullCollection[counterImg].classList.remove('hide')
-    thumbnailCollection[counterImg].classList.add('active');
-});
+  
+  fullCollection[counterImg].classList.remove('hide')
+  thumbnailCollection[counterImg].classList.add('active');
 
-btnUp.addEventListener('click', function(){
-
-  fullCollection[counterImg].classList.add('hide')
-  thumbnailCollection[counterImg].classList.remove('active');
-
-  counterImg--;
-
-  if(counterImg < 0) counterImg = archive.length - 1;
-    fullCollection[counterImg].classList.remove('hide')
-    thumbnailCollection[counterImg].classList.add('active');
-  });
-
+}, 2000)
