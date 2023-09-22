@@ -87,18 +87,51 @@ thumbnailCollection[counterImg].classList.add('active');
 
 // Bonus 1:
 
+//1. Nascondo i bottoni in quanto non servono più.
+btnUp.classList.add('d-none')
+btnDown.classList.add('d-none')
+
+//2. Creo una timing function che sfrutta eventListener creato nella precedente versione.
+let direction = true;
 let c = 0;
 
 const clock = setInterval(function(){
+if(direction){
+
   c++;
   fullCollection[counterImg].classList.add('hide')
   thumbnailCollection[counterImg].classList.remove('active');
-
+  
   counterImg++;
-
+  
   if(counterImg === archive.length) counterImg = 0;
   
   fullCollection[counterImg].classList.remove('hide')
   thumbnailCollection[counterImg].classList.add('active');
+}
+else{
+  fullCollection[counterImg].classList.add('hide')
+  thumbnailCollection[counterImg].classList.remove('active');
 
-}, 2000)
+  counterImg--;
+
+  if(counterImg < 0) counterImg = archive.length - 1;
+    fullCollection[counterImg].classList.remove('hide')
+    thumbnailCollection[counterImg].classList.add('active');
+}
+  
+}, 1500)
+
+
+// Bonus 2:
+
+//1. Creo un pulsante con un eventListener che al click inverta la sequenza della timing function.
+
+//2. Il bottone varierà una variabile flag che dichiaro prima della timing function.
+
+const reversBtn = document.querySelector('.reverse')
+
+
+reversBtn.addEventListener('click', function(){
+  direction = !direction;
+})

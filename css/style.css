@@ -92,7 +92,7 @@
 
 .thumbnail.active{
   opacity: 0.5;
-  border: 10px solid white;
+  border: 5px solid white;
 }
 
 /* Esercizio js-array-objects-carousel */
@@ -115,4 +115,26 @@
 
 .description p{
   font-size: 1.5rem;
+}
+
+/* Bottone per invertire il senso dello slider */
+.reverse{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: -70px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  line-height: 40px;
+  border-radius: 50%;
+  border: 0;
+  background-color: rgba(211, 211, 211, 0.381);
+  color: rgb(14, 59, 14);
+}
+
+.reverse:hover{
+  background-color: white;
 }
